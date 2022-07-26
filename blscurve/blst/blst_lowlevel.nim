@@ -7,7 +7,8 @@
 # This file may not be copied, modified, or distributed except according to
 # those terms.
 
-import std/os
+when not defined(LightClientEmbedded):
+  import std/os
 
 {.compile: "../../vendor/blst/build/assembly.S".}
 {.compile: "../../vendor/blst/src/server.c".}

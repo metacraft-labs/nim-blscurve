@@ -1,8 +1,13 @@
 # This file exposes the internal assembly optimized SHA256 routines
 # of BLST.
 
-import std/[strutils, os]
+import std/strutils
 
+when not defined(LightClientEmbedded):
+  import std/os
+
+const DirSep = '/'
+const AltSep = '/'
 const srcPath = currentSourcePath.rsplit({DirSep, AltSep}, 1)[0] & "/../../vendor/blst/src"
 const headerPath = srcPath & "/sha256.h"
 

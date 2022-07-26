@@ -29,8 +29,8 @@
 import
   # Status libraries
   stew/byteutils,
-  # Internals
   ./blst_lowlevel
+  # Internals
 
 # Batch verification - scalar blinding
 import ./sha256_abi

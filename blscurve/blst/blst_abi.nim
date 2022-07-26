@@ -1,7 +1,12 @@
 # ------------------------------------------------------------------------------------------------
 # Manual edits
-import std/[strutils, os]
+import std/strutils
 
+when not defined(LightClientEmbedded):
+  import os
+
+const DirSep = '/'
+const AltSep = '/'
 const headerPath = currentSourcePath.rsplit({DirSep, AltSep}, 1)[0] & "/../../vendor/blst/bindings/blst.h"
 
 {.pragma: blst, importc, header: headerPath.}
